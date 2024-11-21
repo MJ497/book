@@ -1,15 +1,24 @@
 // Array to store hotel data
 const hotels = [
     { name: "Grand Palace", amenities: ["wifi", "pool", "apartment"], image: "img/hotel1.jpg", price: "N23,000/night", rate: "4.5", location: "Murtala Mohammed Highway" },
+    
     { name: "Ocean View", amenities: ["wifi", "gym"], image: "img/hotel2.jpg", price: "N30,000/night", rate: "4.0", location: "Lekki Beachfront" },
+
     { name: "Mountain Retreat", amenities: ["pool"], image: "img/hotel3.jpg", price: "N15,000/night", rate: "4.7", location: "Obudu Cattle Ranch" },
+
     { name: "City Lights Hotel", amenities: ["wifi", "apartment"], image: "img/hotel2.jpg", price: "N28,000/night", rate: "4.2", location: "Victoria Island" },
+
     { name: "Royal Haven", amenities: ["gym", "pool"], image: "img/hotel1.jpg", price: "N40,000/night", rate: "4.8", location: "Ikoyi" },
+
     { name: "Palm Breeze", amenities: ["wifi"], image: "img/hotel2.jpg", price: "N20,000/night", rate: "4.1", location: "Ajah" },
+
     { name: "Sunset Lodge", amenities: ["gym"], image: "img/hotel3.jpg", price: "N35,000/night", rate: "4.6", location: "Ibadan" },
+
     { name: "Oceanic Bliss", amenities: ["wifi", "gym", "apartment"], image: "img/hotel1.jpg", price: "N25,000/night", rate: "4.4", location: "Epe" },
+
     { name: "Green Meadows", amenities: ["pool"], image: "img/hotel1.jpg", price: "N18,000/night", rate: "4.3", location: "Akure" },
-    { name: "Hilltop Inn", amenities: ["gym", "apartment"], image: "img/hotel3.jpg", price: "N50,000/night", rate: "4.9", location: "Jos" },
+
+    { name: "Hilltop Inn", amenities: ["gym", "apartment"], image: "img/hotel1.jpg", price: "N50,000/night", rate: "4.9", location: "Jos" },
 ];
 
 // Pagination variables
