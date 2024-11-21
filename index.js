@@ -1,7 +1,7 @@
 // Array to store hotel data
 const hotels = [
     { name: "Grand Palace", amenities: ["wifi", "pool", "apartment"], image: "img/hotel1.jpg", price: "N23,000/night", rate: "4.5", location: "Murtala Mohammed Highway" },
-    
+
     { name: "Ocean View", amenities: ["wifi", "gym"], image: "img/hotel2.jpg", price: "N30,000/night", rate: "4.0", location: "Lekki Beachfront" },
 
     { name: "Mountain Retreat", amenities: ["pool"], image: "img/hotel3.jpg", price: "N15,000/night", rate: "4.7", location: "Obudu Cattle Ranch" },
@@ -148,20 +148,30 @@ document.getElementById("booking-form").addEventListener("submit", async functio
 
 // Function to upload receipt to Google Drive via Apps Script
 async function uploadReceipt(file) {
-    const formData = new FormData();
-    formData.append("file", file);
+    try {
+        const formData = new FormData();
+        formData.append("file", file);
 
-    // Replace with your Google Apps Script Web App URL for receipt uploads
-    const uploadUrl = "https://script.google.com/macros/s/AKfycby93EQp6BYOpmCOVcU9Tq2SGAgtHZaAo1S4FRSf6Fy9NgoCAmGY4GKuvju1H4zJGH7B/exec";
+        // Replace with your Google Apps Script Web App URL
+        const uploadUrl = "https://script.google.com/macros/s/AKfycby93EQp6BYOpmCOVcU9Tq2SGAgtHZaAo1S4FRSf6Fy9NgoCAmGY4GKuvju1H4zJGH7B/exec";
 
-    const response = await fetch(uploadUrl, {
-        method: "POST",
-        body: formData
-    });
+        const response = await fetch(uploadUrl, {
+            method: "POST",
+            body: formData
+        });
 
-    const result = await response.json();
-    return result.fileUrl; // Return the receipt URL
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        const result = await response.json();
+        return result.fileUrl; // Return the receipt URL
+    } catch (error) {
+        console.error("Error uploading receipt:", error);
+        alert("Failed to upload receipt. Please check your internet connection and try again.");
+    }
 }
+
 
 // Load the initial page of hotels
 window.onload = () => {
